@@ -46,6 +46,11 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 # Shim
 PRODUCT_PACKAGES += \
     libwatermark_shim
+    	
+# Dex/ART optimization
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
+USE_DEX2OAT_DEBUG := false
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
