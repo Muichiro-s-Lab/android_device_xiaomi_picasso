@@ -47,12 +47,28 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 # Properties
 -include $(LOCAL_PATH)/properties.mk
 
+# Add Custom updater props
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.hana.build.version=$(PLATFORM_VERSION) \
+    ro.hana.device=picasso \
+    ro.hana.romdistro=lineage \
+    hana.updater.allow_downgrading=false \
+
 # Inherit from MindTheGApps
 ifeq ($(WITH_GAPPS), true)
 $(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+
 TARGET_UNOFFICIAL_BUILD_ID += Gapps
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.hana.buildtype=gapps
+
 else
 TARGET_UNOFFICIAL_BUILD_ID += Vanilla
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.hana.buildtype=vanilla
+
 endif
 
 # Inherit from sm7250-common
