@@ -47,6 +47,22 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 # Properties
 -include $(LOCAL_PATH)/properties.mk
 
+# Add Custom updater props
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.hana.build.version=$(PLATFORM_VERSION) \
+    ro.hana.device=picasso \
+    ro.hana.romdistro=arrow \
+    hana.updater.allow_downgrading=false \
+
+# Check if we are producting gapps build
+ifeq ($(ARROW_GAPPS), true)
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.hana.buildtype=gapps
+else
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.hana.buildtype=vanilla
+endif
+
 # Inherit from sm7250-common
 $(call inherit-product, device/xiaomi/sm7250-common/lito.mk)
 
