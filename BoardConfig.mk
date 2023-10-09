@@ -16,6 +16,9 @@ DEVICE_PATH := device/xiaomi/picasso
 
 BUILD_BROKEN_DUP_RULES := true
 
+# Camera
+TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true
+
 # Display
 TARGET_SCREEN_DENSITY := 420
 
