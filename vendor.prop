@@ -1,2 +1,5 @@
 # Display
 vendor.display.defer_fps_frame_count=2
+
+# HWUI
+ro.hwui.render_ahead=120
