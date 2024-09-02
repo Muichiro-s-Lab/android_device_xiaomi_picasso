@@ -1,2 +1,10 @@
 # Netflix
 ro.netflix.bsp_rev=Q7250-19133-1
+
+#Infinity Flags
+ro.infinity.soc=Snapdragon 765G
+ro.infinity.battery= 4500 mah
+ro.infinity.display= LED 120 Hz
+ro.infinity.camera=64 mp + 8 mp + 2 mp, 20 mp
+ro.infinity.ram=8 GB
+ro.infinity.rom=128 GB
